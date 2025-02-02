@@ -89,4 +89,5 @@ ENV GROQ_API_KEY=${GROQ_API_KEY} \
     RUNNING_IN_DOCKER=true
 
 RUN mkdir -p ${WORKDIR}/run
+RUN corepack prepare pnpm@8.7.1 --activate && pnpm install
 CMD pnpm run dev --host
